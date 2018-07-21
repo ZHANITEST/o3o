@@ -1,0 +1,9 @@
+name "o3o"
+description "o3o runtime"
+authors "ZHANITEST"
+copyright "Copyright © 2018, ZHANITEST"
+license "LGPL v3"
+
+dependency "derelict-sdl2" version="~>3.0.0-beta"
+subConfiguration "derelict-sdl2" "derelict-sdl2-static"
+libs "sdl2"
