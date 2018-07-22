@@ -81,6 +81,19 @@ class UConfig{
         // JSON 쿼리 날리기(무조건 str으로)
         return o[key].str;
     }
+
+    /**
+     * key로 int얻어오기
+     * description:
+     *   리턴 값은 반드시 string으로.
+     *
+     * params:
+     *   key = 불러 올 설정 value의 key. 못 찾을 경우 "N/A"문자열 리턴.
+     */
+    ulong getInt(string key){
+        // JSON 쿼리 날리기(무조건 str으로)
+        return o[key].integer;
+    }
 }
 
 /**
