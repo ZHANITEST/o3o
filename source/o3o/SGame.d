@@ -6,9 +6,10 @@
 
 module o3o.SGame;
 import std.stdio;
+import std.string;
 
+import o3o.Xdl;
 import o3o.UConfig;
-
 import derelict.sdl2.sdl;
 
 /**
@@ -16,27 +17,45 @@ import derelict.sdl2.sdl;
  *   - 게임루프 등등 게임의 큰 틀을 담당하는 서비스
  */
 class SGame{
-    SDL_Window* window;
+    SDL_Window*   window;
+    SDL_Renderer* renderer;
 
+    /// 생성자
     this(){
-/*
-window = SDL_CreateWindow(
-"Hello SDL",
-SDL_WINDOWPOS_CENTERED,SDL_WINDOWPOS_CENTERED,
-640,480,
-0);*/
+        // 옵션파일 읽어오기
+        //   - title: 게임타이틀
+        //   - x    : 게임창 가로 값
+        //   - y    : 게임창 세로 값
+        //UConfig cfg = new UConfig("SGame.cfg");
 
+        // 게임 초기화
+        XDL_Init();
 
+        // 게임 창 만들기
+        this.window = XDL_CreateWindow(new UConfig("SGame.cfg"), SDL_WINDOW_SHOWN);
+        
+        // 게임 렌더러 만들기
+        this.renderer = XDL_CreateRenderer(this.window);
+        
     }
 
     // 컨테이너 업데이트
-    void update(){
-
+    void update(int i){
+        XDL_Delay(1000*i);
     }
 
     // 게임 시작
     void run(){
+        for(int i=0; i<3; i++){
+            this.update(i);
+            writeln("Ho!");
+        }
+        XDL_Quit();
+    }
 
+    /// 소멸자
+    ~this(){
+        this.window = null;
     }
 }
 
