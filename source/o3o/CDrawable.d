@@ -4,7 +4,7 @@
 //   - 작성자: ZHANITEST(github.com/zhanitest/o3o.git)
 //
 
-module o3o.window;
+module o3o.CDrawable;
 import std.stdio;
 
 import o3o.IComponent;    // 공통부 컴포넌트
