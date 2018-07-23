@@ -20,7 +20,8 @@ void main()
 	writeln(line);
 
 	// 스타팅 포인트
-	writeln("Shooting!");
+	SGame game_main = new SGame();
+	game_main.run();
 
 	writeln(line);
 	writeln("END");
