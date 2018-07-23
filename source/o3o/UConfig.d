@@ -9,6 +9,7 @@ module o3o.UConfig;
 import std.stdio;
 import std.file;
 import std.json;
+import std.conv;
 
 import o3o.ULog;
 
@@ -90,9 +91,9 @@ class UConfig{
      * params:
      *   key = 불러 올 설정 value의 key. 못 찾을 경우 "N/A"문자열 리턴.
      */
-    ulong getInt(string key){
+    int getInt(string key){
         // JSON 쿼리 날리기(무조건 str으로)
-        return o[key].integer;
+        return to!int(o[key].str);
     }
 }
 
