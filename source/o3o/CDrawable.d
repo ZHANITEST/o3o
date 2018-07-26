@@ -16,7 +16,7 @@ import derelict.sdl2.sdl; // SDL2 레벨
  * Drawable 클래스
  *   - 화면에 그리는 기능을 가지는 컴포넌트
  */
-class CDrawable: IComponent{
+class CDrawable: IGeneralComponent{
     private int       x;
     private int       y;
     private string name;
