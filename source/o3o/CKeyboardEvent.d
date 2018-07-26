@@ -16,30 +16,21 @@ import derelict.sdl2.sdl; // SDL2 레벨
  * CKeyboardEvent 클래스
  *   - 화면에 그리는 기능을 가지는 컴포넌트
  */
-class CKeyboardEvent: IComponent{
-    private string name;
-    
+class CKeyboardEvent: IEventComponent{    
     /**
-    * 생성자
-    * params:
-    *   com_name: 컴포넌트명
-    */
-    this(string com_name){
-        // 컴포넌트명 초기화
-        this.name = com_name;
-        
+     * 생성자
+     */
+    this(){
         // 디버그 메세지(초기화 완료됬다)
         debug{
-            ulog("CKeyboardEvent(Init): "~com_name);
+            ulog("CKeyboardEvent(Init)");
         }
     }
 
     /**
-    * 업데이트
-    * params:
-    * 
-    */
-    void update(){
+     * 업데이트
+     */
+    void update(SDL_Event e){
         writeln("CKeyboardEvent Update");
     }
 }
