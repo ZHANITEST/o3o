@@ -1,0 +1,9 @@
+{
+	"dub": {
+		"lastUpgrade": "2018-07-27T23:40:07.9521376",
+		"cachedUpgrades": {
+			"derelict-sdl2": "3.0.0-beta.7",
+			"derelict-util": "3.0.0-beta.2"
+		}
+	}
+}

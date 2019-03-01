@@ -20,6 +20,7 @@ class SEvent{
     private XDLScreen s;
     /**
      * 생성자
+     */
     this(ref XDLScreen screen_obj){
         this.s = screen_obj;
     }
